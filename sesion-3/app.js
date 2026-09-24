@@ -121,6 +121,14 @@ function renderResource(){const r=resourceMeta();if(!r)return;$('#resourceType')
 function bindResourceNav(total){$$('[data-rnav]',$('#resourceFooter')).forEach(b=>b.onclick=()=>{resourceContext.index=Math.max(0,Math.min(total-1,(resourceContext.index||0)+Number(b.dataset.rnav)));stopSpeech();renderResource();});}
 function openImage(src,alt='Vista ampliada'){$('#imageModalImg').src=src;$('#imageModalImg').alt=alt;openDialog('imageModal');}
 
+/* aula virtual */
+async function returnToAulaVirtual(){
+  if(typeof stopSpeech==='function')stopSpeech();
+  try{if(document.fullscreenElement)await document.exitFullscreen();}catch(_e){}
+  window.location.href=new URL('../',window.location.href).href;
+}
+
 /* bindings */
+$('#aulaHomeBtn')?.addEventListener('click',returnToAulaVirtual);
 $$('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));$$('.modal-close').forEach(b=>b.onclick=()=>closeDialog(b.dataset.close));$$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)closeDialog(d.id);}));$('#prevConcept').onclick=()=>{conceptIndex=Math.max(0,conceptIndex-1);renderConceptModal();setTimeout(()=>$('#conceptBody').scrollTo({top:0}),20);};$('#nextConcept').onclick=()=>{conceptIndex=Math.min(DATA.concepts.length-1,conceptIndex+1);renderConceptModal();setTimeout(()=>$('#conceptBody').scrollTo({top:0}),20);};$('#resourceFull').onclick=()=>toggleFullscreen($('#resourceShell'));$('#fullBtn').onclick=()=>toggleFullscreen($('.app-shell'));$('#fontMinus').onclick=()=>{state.font=Math.max(.88,state.font-.08);updateFont();};$('#fontPlus').onclick=()=>{state.font=Math.min(1.24,state.font+.08);updateFont();};$('#soundBtn').onclick=()=>{state.sound=!state.sound;$('#soundBtn').textContent=state.sound?'🔊':'🔇';};$('#themeBtn').onclick=()=>{state.theme=state.theme==='light'?'dark':'light';applyTheme();};$('#layoutSelect').onchange=e=>{state.layout=e.target.value;applyLayout();};$('#restartQuiz').onclick=resetQuiz;$$('[data-open-resource]').forEach(b=>b.onclick=()=>openResource(b.dataset.openResource,Number(b.dataset.resourceIndex||0)));$$('.lab-tab').forEach(b=>b.onclick=()=>{state.lab=b.dataset.lab;state.stress={drop:false,late:false};renderLab();});window.addEventListener('resize',()=>{if(state.layout==='auto')applyLayout();});if('speechSynthesis'in window)speechSynthesis.onvoiceschanged=()=>{};
 applyLayout();applyTheme();updateFont();renderConceptCards();renderLab();renderResources();resetQuiz();

@@ -1,0 +1,18 @@
+ACTUALIZACIÓN AULA VIRTUAL v1.1
+
+Incluye dos mejoras en las sesiones 1, 2, 3 y 4:
+1) Botón flotante "Aula Virtual" para regresar a la página principal. Si el programa está en pantalla completa, sale de pantalla completa antes de regresar.
+2) Corrección del desplazamiento táctil en las tarjetas Flip: en celular/tablet el modal usa un único desplazamiento vertical para evitar que el panel de detalle capture el gesto y se "congele".
+
+CÓMO APLICARLA
+1. Descomprime este ZIP.
+2. Copia las carpetas sesion-1, sesion-2, sesion-3 y sesion-4.
+3. Pégalas en la raíz de tu repositorio local aula-virtual-ricardo-puccio.
+4. Windows preguntará si deseas reemplazar archivos existentes. Acepta reemplazar.
+5. Abre GitHub Desktop. Deben aparecer 12 archivos modificados (3 por sesión: index.html, styles.css y app.js).
+6. Summary sugerido: "v1.1 - Volver al Aula y scroll móvil"
+7. Commit to main.
+8. Push origin.
+9. Vercel desplegará automáticamente la actualización conservando el mismo enlace.
+
+No se modifican contenidos, preguntas, recursos multimedia ni la página principal.

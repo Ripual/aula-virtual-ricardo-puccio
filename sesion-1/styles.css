@@ -92,3 +92,25 @@ html[data-theme="dark"] .support-thumb-btn{background:#152332;color:var(--text)}
 .closing-report{padding:1.6rem}.closing-lead{font-size:1.06rem;line-height:1.6;max-width:1050px!important}.closing-report-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;margin:1rem 0}.closing-report-grid>div{padding:.8rem;border:1px solid rgba(255,255,255,.25);border-radius:14px;background:rgba(255,255,255,.12)}.closing-report-grid strong{font-size:1.02rem}.closing-report-grid p{margin:.25rem 0 0;line-height:1.48}.closing-infographic{margin:1rem 0 0;padding:.55rem;background:#fff;border-radius:16px;cursor:zoom-in}.closing-infographic img{display:block;width:100%;max-height:520px;object-fit:contain;border-radius:10px}.closing-infographic figcaption{color:#405368;text-align:center;font-size:.85rem;padding:.4rem}.closing-conclusion{margin-top:1rem;padding:1rem;border:1px solid rgba(255,255,255,.35);border-radius:14px;background:rgba(0,0,0,.12)}.closing-conclusion strong{font-size:1.08rem}.closing-conclusion p{margin:.35rem 0 0;max-width:none!important;line-height:1.6}
 
 @media(max-width:800px){.closing-report-grid{grid-template-columns:1fr}.video-float-shell{width:96vw;border-width:6px}.support-thumb-btn img{width:62px;height:38px}}
+
+
+/* ===== Aula Virtual v1.1 · navegación + scroll táctil ===== */
+.aula-home-btn{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(76px,calc(env(safe-area-inset-bottom) + 76px));z-index:95;display:inline-flex;align-items:center;gap:.42rem;min-height:44px;padding:.58rem .82rem;border:1px solid rgba(255,255,255,.45);border-radius:999px;background:rgba(7,61,135,.96);color:#fff;font-weight:900;box-shadow:0 8px 24px rgba(0,0,0,.24);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+.aula-home-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.aula-home-btn:focus-visible{outline:3px solid rgba(243,138,31,.7);outline-offset:2px}
+html[data-theme="dark"] .aula-home-btn{background:rgba(15,109,104,.97)}
+
+/* El modal completo es el único scroller en pantallas táctiles estrechas.
+   Evita que el panel de detalle capture el gesto y "congele" el desplazamiento. */
+.modal-scroll{touch-action:pan-y;-webkit-overflow-scrolling:touch}
+.concept-detail-scroll{touch-action:pan-y;-webkit-overflow-scrolling:touch}
+@media(max-width:1050px){
+  .concept-modal-layout{min-height:auto}
+  .concept-detail-scroll{overflow:visible!important;max-height:none!important;overscroll-behavior:auto!important;scrollbar-gutter:auto!important}
+  .modal-scroll{overflow-y:auto!important;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y}
+  .concept-image-column,.concept-main-slide,.concept-detail-scroll,.detail-box,.audio-pista,.question-gate{touch-action:pan-y}
+}
+@media(max-width:700px){
+  .aula-home-btn{right:10px;bottom:max(70px,calc(env(safe-area-inset-bottom) + 70px));min-height:42px;padding:.52rem .7rem;font-size:.84rem}
+}
+@media(max-width:420px){.aula-home-btn span{display:none}.aula-home-btn{width:44px;height:44px;justify-content:center;padding:0;font-size:1.05rem}}

@@ -1,0 +1,9 @@
+PROGRAMA INTERACTIVO · ADMINISTRACIÓN BANCARIA · SESIÓN 3 · IPN
+
+1. Mantenga todos los archivos y la carpeta assets juntos.
+2. Abra index.html en Chrome, Edge o Firefox.
+3. El programa funciona localmente; los recursos se abren dentro del propio programa.
+4. Los scorings, tasas, ponderaciones y escenarios del laboratorio son supuestos académicos configurables. No representan políticas comerciales reales de una entidad financiera.
+
+Elaborado por: Mg. Ricardo Puccio Alvarado
+ripua@gmail.com

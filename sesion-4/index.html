@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Administración Bancaria · Sesión 4 · Instituto Peruano de Negocios</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+  <div class="brand"><img src="assets/logo_ipn.png" alt="Instituto Peruano de Negocios"><div><strong>Administración Bancaria</strong><span>Sesión 4 · Análisis de Estados Financieros y Gestión Integral de Riesgos</span></div></div>
+  <div class="utility">
+    <button id="fontMinus" title="Reducir texto">A−</button><button id="fontPlus" title="Aumentar texto">A+</button>
+    <button id="soundBtn" title="Sonidos de confirmación">🔊</button><button id="themeBtn" title="Cambiar modo claro / oscuro" aria-pressed="false">◐</button>
+    <select id="layoutSelect" title="Modo aula"><option value="auto">Auto</option><option value="16x9">16:9</option><option value="4x3">4:3</option><option value="normal">Normal</option></select>
+    <button id="fullBtn" title="Pantalla completa">⛶</button><button id="resetAll" title="Reiniciar programa">↺</button>
+  </div>
+</header>
+<nav class="main-nav" aria-label="Ruta de aprendizaje">
+  <button class="nav-item active" data-go="inicio">01 Inicio</button>
+  <button class="nav-item" data-go="conceptos">02 Conceptos</button>
+  <button class="nav-item" data-go="simulador">03 Laboratorio</button>
+  <button class="nav-item" data-go="comprobacion">04 Comprobación</button>
+  <button class="nav-item" data-go="recursos">05 Recursos</button>
+  <button class="nav-item" data-go="cierre">06 Cierre</button>
+</nav>
+<main>
+<section class="section active" id="inicio">
+  <div class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">INSTITUTO PERUANO DE NEGOCIOS · SESIÓN 4</span>
+      <h1>Análisis de Estados Financieros y Gestión Integral de Riesgos</h1>
+      <h2>De la radiografía financiera a la decisión y al control del riesgo</h2>
+      <p>Calcula, interpreta y somete a estrés los principales indicadores de Panadería Horizonte. Después convierte las señales financieras en una evaluación de riesgo con controles y evidencia.</p>
+      <div class="actions"><button class="btn primary" data-open-resource="video-main">▶ Ver video de apertura</button><button class="btn secondary" data-go="conceptos">Iniciar recorrido →</button></div>
+      <div class="author-credit"><strong>Elaborado por: Mg. Ricardo Puccio Alvarado</strong><span>ripua@gmail.com</span></div>
+    </div>
+    <div class="hero-logo"><img src="assets/logo_ipn.png" alt="Instituto Peruano de Negocios"></div>
+  </div>
+  <div class="opening-grid">
+    <div class="opening-card"><span>1</span><strong>RADIOGRAFÍA</strong><p>Balance · resultados · caja.</p></div>
+    <div class="opening-card"><span>2</span><strong>RATIOS</strong><p>Calcular no basta: hay que interpretar.</p></div>
+    <div class="opening-card"><span>3</span><strong>ESCENARIOS</strong><p>¿Qué cambia si cambia el contexto?</p></div>
+    <div class="opening-card"><span>4</span><strong>RIESGO</strong><p>Probabilidad · impacto · controles.</p></div>
+  </div>
+  <div class="callout"><strong>Pregunta de apertura</strong><p>Una empresa puede mostrar utilidades altas y aun así tener poco efectivo y obligaciones próximas. ¿Un solo número favorable debería decidir un crédito?</p></div>
+</section>
+
+<section class="section" id="conceptos">
+  <div class="section-head"><div><span class="eyebrow dark">CONCEPTOS ESENCIALES</span><h2>Cuatro tarjetas antes de entrar al laboratorio</h2><p>Concepto primero, apoyo contextual y luego pregunta. Las alternativas se reordenan en cada nueva ejecución sin patrón fijo.</p></div><span class="badge" id="conceptProgress">0 / 4 revisadas</span></div>
+  <div class="concept-grid" id="conceptGrid"></div>
+</section>
+
+<section class="section" id="simulador">
+  <div class="section-head"><div><span class="eyebrow dark">LABORATORIO FINANCIERO</span><h2>Radiografía financiera → contexto → escenario → riesgo</h2><p>El laboratorio es el corazón de la sesión. Un escenario es suficiente para completar la misión “¿Qué pasaría si...?”; los otros quedan disponibles para profundizar.</p></div><span class="badge" id="labBadge">0 / 4 misiones</span></div>
+  <div class="lab-disclaimer"><strong>Regla central:</strong> un ratio es una señal, no una sentencia. La interpretación depende de composición, sector, periodo, calidad de la información y relación con otros indicadores.</div>
+  <div id="labHost"></div>
+</section>
+
+<section class="section" id="comprobacion">
+  <div class="section-head"><div><span class="eyebrow dark">COMPROBACIÓN INDIVIDUAL</span><h2>Cinco preguntas para integrar cálculo, contexto y riesgo</h2><p>Las alternativas se barajan en cada ejecución. Si fallas el primer intento, tendrás un segundo; tras un segundo error se activa la Ruta correcta.</p></div><span class="badge" id="quizBadge">Pregunta 1 / 5</span></div>
+  <div class="quiz-progress"><span id="quizBar"></span></div>
+  <div id="quizHost"></div>
+  <div class="score-card hidden" id="scoreCard"><span class="eyebrow dark">RESULTADO</span><h2 id="scoreTitle"></h2><p id="scoreText"></p><button class="btn secondary" id="restartQuiz">Volver a comprobar</button></div>
+</section>
+
+<section class="section" id="recursos">
+  <div class="section-head"><div><span class="eyebrow dark">RECURSOS DE LA SESIÓN</span><h2>Todo el material, sin salir del programa</h2><p>PPT, artículo, Excel, videos, infografía integradora y audio. El laboratorio reproduce dentro del programa la lógica del Excel real.</p></div></div>
+  <div class="resource-grid" id="resourceGrid"></div>
+</section>
+
+<section class="section" id="cierre">
+  <div class="closing-card closing-report">
+    <span class="eyebrow">CIERRE · SÍNTESIS INTEGRADORA</span>
+    <h2>Medir bien no basta si interpretamos mal</h2>
+    <p class="closing-lead">Los estados financieros muestran posición, desempeño y caja. Los ratios convierten cifras en señales; los escenarios revelan sensibilidad; y la gestión integral del riesgo obliga a preguntar qué puede salir mal, qué controles existen y qué exposición permanece.</p>
+    <div class="closing-report-grid">
+      <div><strong>1. Mide</strong><p>Balance, resultados y flujo responden preguntas distintas y complementarias.</p></div>
+      <div><strong>2. Interpreta</strong><p>La misma cifra puede significar algo distinto según composición, sector, momento y calidad de la información.</p></div>
+      <div><strong>3. Estresa</strong><p>Ventas, inventarios o costo financiero pueden deteriorar indicadores diferentes aun cuando otros permanezcan iguales.</p></div>
+      <div><strong>4. Controla</strong><p>El riesgo residual depende de controles ejecutados, responsables y con evidencia; no solo de controles escritos.</p></div>
+    </div>
+    <figure class="closing-infographic" data-open-resource="infographic"><img src="assets/infografia_sesion4.png" alt="Infografía Gestión Bancaria: análisis financiero y riesgos"><figcaption>Haz clic para ampliar la infografía integradora: diagnóstico financiero → decisión crediticia → riesgo inherente → controles → riesgo residual → líneas de defensa.</figcaption></figure>
+    <div class="closing-conclusion"><strong>Conclusión final</strong><p>Crecer el negocio y proteger el capital no son objetivos opuestos. La administración bancaria busca una combinación sostenible entre rentabilidad, liquidez, capacidad de pago y riesgo aceptable. Por eso el análisis termina cuando podemos explicar no solo cuánto da un ratio, sino qué significa, qué podría estar ocultando y qué debemos controlar antes de decidir.</p></div>
+    <div class="actions"><button class="btn secondary" data-open-resource="infographic">Ver infografía ampliada</button><button class="btn secondary" data-go="recursos">Abrir recursos</button></div>
+  </div>
+</section>
+</main>
+<footer class="program-footer"><img src="assets/logo_ipn.png" alt="Instituto Peruano de Negocios"><div><strong>Administración Bancaria · Sesión 4</strong><span>Análisis de Estados Financieros · Gestión Integral de Riesgos</span><span>Elaborado por: Mg. Ricardo Puccio Alvarado · ripua@gmail.com</span></div></footer>
+</div>
+
+<dialog class="modal" id="conceptModal">
+  <div class="modal-shell concept-shell">
+    <header class="modal-header"><div><span class="modal-kicker" id="conceptKicker"></span><h2 id="conceptTitle"></h2></div><button class="modal-close" data-close="conceptModal" aria-label="Cerrar">×</button></header>
+    <div class="modal-scroll" id="conceptBody"></div>
+    <footer class="modal-footer"><div class="modal-nav"><button id="prevConcept">← Anterior</button><span id="conceptCounter"></span><button id="nextConcept">Siguiente →</button></div></footer>
+  </div>
+</dialog>
+
+<dialog class="modal" id="resourceModal">
+  <div class="modal-shell resource-shell" id="resourceShell">
+    <header class="modal-header"><div><span class="modal-kicker" id="resourceType"></span><h2 id="resourceTitle"></h2></div><div class="header-actions"><button id="resourceFull" title="Pantalla completa">⛶</button><button class="modal-close" data-close="resourceModal">×</button></div></header>
+    <div class="resource-body" id="resourceBody"></div>
+    <footer class="modal-footer resource-footer" id="resourceFooter"></footer>
+  </div>
+</dialog>
+<dialog class="modal video-modal" id="videoModal"><div class="video-float-shell"><button class="video-float-close" type="button" data-close="videoModal">×</button><video id="floatingVideo" controls preload="metadata"></video></div></dialog>
+<dialog class="modal image-modal" id="imageModal"><div class="image-shell"><button class="modal-close image-close" data-close="imageModal">×</button><img id="imageModalImg" alt="Vista ampliada"></div></dialog>
+<dialog class="modal" id="caseModal"><div class="modal-shell case-shell"><header class="modal-header"><div><span class="modal-kicker">DATOS DEL CASO</span><h2>Panadería Horizonte · base didáctica</h2></div><button class="modal-close" data-close="caseModal">×</button></header><div class="modal-scroll" id="caseBody"></div></div></dialog>
+<div class="toast" id="toast" aria-live="polite"></div>
+<script src="data.js"></script>
+<script src="resource_texts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Administración Bancaria · Sesión 2 · Instituto Peruano de Negocios</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+  <div class="brand"><img src="assets/logo_ipn.png" alt="Instituto Peruano de Negocios"><div><strong>Administración Bancaria</strong><span>Sesión 2 · Créditos, evaluación, cobranza y recuperación</span></div></div>
+  <div class="utility">
+    <button id="fontMinus" title="Reducir texto">A−</button><button id="fontPlus" title="Aumentar texto">A+</button>
+    <button id="soundBtn" title="Sonidos de confirmación">🔊</button><button id="themeBtn" title="Cambiar modo claro / oscuro" aria-pressed="false">◐</button>
+    <select id="layoutSelect" title="Modo aula"><option value="auto">Auto</option><option value="16x9">16:9</option><option value="4x3">4:3</option><option value="normal">Normal</option></select>
+    <button id="fullBtn" title="Pantalla completa">⛶</button>
+  </div>
+</header>
+<nav class="main-nav" aria-label="Ruta de aprendizaje">
+  <button class="nav-item active" data-go="inicio">01 Inicio</button>
+  <button class="nav-item" data-go="conceptos">02 Conceptos</button>
+  <button class="nav-item" data-go="simulador">03 Simulador</button>
+  <button class="nav-item" data-go="comprobacion">04 Comprobación</button>
+  <button class="nav-item" data-go="recursos">05 Recursos</button>
+  <button class="nav-item" data-go="cierre">06 Cierre</button>
+</nav>
+<main>
+<section class="section active" id="inicio">
+  <div class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">INSTITUTO PERUANO DE NEGOCIOS · SESIÓN 2</span>
+      <h1>Créditos, evaluación, cobranza y recuperación</h1>
+      <h2>De la confianza inicial a la recuperación responsable del valor</h2>
+      <p>Comprende cómo se evalúa una solicitud con las 5C, cómo se transforma el análisis en una decisión y qué ocurre cuando aparecen mora, provisiones y necesidad de recuperación.</p>
+      <div class="actions"><button class="btn primary" data-open-resource="video-main">▶ Ver video de apertura</button><button class="btn secondary" data-go="conceptos">Iniciar recorrido →</button></div>
+      <div class="author-credit"><strong>Elaborado por: Mg. Ricardo Puccio Alvarado</strong><span>ripua@gmail.com</span></div>
+    </div>
+    <div class="hero-logo"><img src="assets/logo_ipn.png" alt="Instituto Peruano de Negocios"></div>
+  </div>
+  <div class="opening-grid">
+    <div class="opening-card"><span>1</span><strong>CRÉDITO</strong><p>Confianza, promesa de pago y riesgo.</p></div>
+    <div class="opening-card"><span>2</span><strong>EVALUACIÓN</strong><p>Carácter, capital, capacidad, condiciones y colateral.</p></div>
+    <div class="opening-card"><span>3</span><strong>COBRANZA</strong><p>Seguimiento, mora y recuperación.</p></div>
+    <div class="opening-card"><span>4</span><strong>RIESGO</strong><p>Provisiones, segmentación y prioridad.</p></div>
+  </div>
+  <div class="callout"><strong>Pregunta de apertura</strong><p>Dos clientes solicitan exactamente S/ 20,000 y ofrecen garantías similares, pero uno tiene ingresos estables y buen historial mientras el otro muestra ventas variables y atrasos frecuentes. ¿Deberían recibir el mismo crédito y bajo las mismas condiciones?</p></div>
+</section>
+
+<section class="section" id="conceptos">
+  <div class="section-head"><div><span class="eyebrow dark">CONCEPTOS ESENCIALES</span><h2>Cuatro tarjetas para construir el criterio crediticio</h2><p>Pasa el mouse sobre una tarjeta para verla girar. Haz clic o tócala para abrir el contenido ampliado.</p></div><span class="badge" id="conceptProgress">0 / 4 revisadas</span></div>
+  <div class="concept-grid" id="conceptGrid"></div>
+</section>
+
+<section class="section" id="simulador">
+  <div class="section-head"><div><span class="eyebrow dark">SIMULADOR · ¿OTORGAMOS EL CRÉDITO?</span><h2>María y Panadería Horizonte</h2><p>Evalúa el caso paso a paso. Las ayudas visuales y de audio aparecen antes de la decisión para que puedas construir el razonamiento.</p></div><span class="badge" id="simProgress">0 / 5 decisiones</span></div>
+  <div class="route-map" id="routeMap">
+    <div class="route-node" id="node-maria">María<br><small>solicita S/ 20,000</small></div><span>→</span>
+    <div class="route-node" id="node-evaluacion">Evaluación 5C<br><small>evidencia y flujo</small></div><span>→</span>
+    <div class="route-node" id="node-decision">Decisión<br><small>monto / plazo / riesgo</small></div><span>→</span>
+    <div class="route-node" id="node-seguimiento">Seguimiento<br><small>mora y recuperación</small></div>
+  </div>
+  <div id="simHost"></div>
+  <div class="what-wrap hidden" id="whatWrap">
+    <div class="section-subhead"><div><span class="eyebrow dark">EXPLORADOR DE ESCENARIOS</span><h3>¿Qué pasaría si...?</h3><p>Activa una o varias condiciones. El objetivo es observar cómo cambia la evaluación cuando se modifica capacidad, carácter o colateral.</p></div></div>
+    <div class="what-options">
+      <label><input type="checkbox" value="A"> <strong>A</strong><span>Las ventas de Panadería Horizonte caen 25 %.</span></label>
+      <label><input type="checkbox" value="B"> <strong>B</strong><span>Aparecen atrasos anteriores que María no había informado.</span></label>
+      <label><input type="checkbox" value="C"> <strong>C</strong><span>La garantía ofrecida aumenta de valor hasta S/ 25,000.</span></label>
+    </div>
+    <div class="actions"><button class="btn primary" id="analyzeScenario" disabled>Analizar combinación</button><button class="btn ghost" id="clearScenario" disabled>Limpiar</button></div>
+    <div id="scenarioResult"></div>
+    <div class="detect-card"><div><span class="eyebrow dark">DETECTA EL ERROR</span><h3>Una garantía alta no responde todas las preguntas</h3></div><div id="detectHost"></div></div>
+  </div>
+</section>
+
+<section class="section" id="comprobacion">
+  <div class="section-head"><div><span class="eyebrow dark">COMPROBACIÓN INDIVIDUAL</span><h2>Seis preguntas para verificar comprensión</h2><p>Las preguntas y alternativas se presentan en orden aleatorio. Si fallas el primer intento, tendrás un segundo. Tras un segundo error se activa la Ruta correcta.</p></div><span class="badge" id="quizBadge">Pregunta 1 / 6</span></div>
+  <div class="quiz-progress"><span id="quizBar"></span></div>
+  <div id="quizHost"></div>
+  <div class="score-card hidden" id="scoreCard"><span class="eyebrow dark">RESULTADO</span><h2 id="scoreTitle"></h2><p id="scoreText"></p><button class="btn secondary" id="restartQuiz">Volver a comprobar</button></div>
+</section>
+
+<section class="section" id="recursos">
+  <div class="section-head"><div><span class="eyebrow dark">RECURSOS DE LA SESIÓN</span><h2>Abre cada material sin salir del programa</h2><p>PPT, artículo, infografía, videos y audio se visualizan dentro del programa. Los materiales visuales incorporan Leer, Explicar, Pausar, Continuar y Detener.</p></div></div>
+  <div class="resource-grid" id="resourceGrid"></div>
+</section>
+
+<section class="section" id="cierre">
+  <div class="closing-card closing-report">
+    <span class="eyebrow">CIERRE · INFORME DE SÍNTESIS</span>
+    <h2>El crédito se administra antes, durante y después del desembolso</h2>
+    <p class="closing-lead">La sesión muestra que prestar no consiste solamente en entregar dinero. La calidad del crédito nace en la evaluación, se sostiene con seguimiento y se protege mediante una recuperación oportuna, proporcional y respetuosa de las reglas.</p>
+    <div class="closing-report-grid">
+      <div><strong>1. Evaluar</strong><p>Las 5C obligan a separar voluntad, capacidad, respaldo y entorno. Una sola señal positiva no sustituye el análisis integral.</p></div>
+      <div><strong>2. Diseñar</strong><p>Monto, plazo y cuota deben ser compatibles con el flujo real. Evaluar también significa ajustar la estructura para no forzar una operación.</p></div>
+      <div><strong>3. Seguir y cobrar</strong><p>La cobranza forma parte del ciclo desde el inicio. Actuar temprano permite comprender causas y conservar más alternativas de recuperación.</p></div>
+      <div><strong>4. Proteger</strong><p>Morosidad, provisiones y segmentación ayudan a medir impacto y a priorizar dónde la institución debe concentrar sus recursos.</p></div>
+    </div>
+    <div class="closing-flow"><span>¿Quiere pagar?</span><b>→</b><span>¿Puede pagar?</span><b>→</b><span>¿Qué respaldo existe?</span><b>→</b><span>¿Qué cambia si aparece mora?</span></div>
+    <figure class="closing-infographic" data-open-resource="infographic"><img src="assets/infografia_riesgo_crediticio.png" alt="Síntesis visual de gestión del riesgo crediticio"><figcaption>Haz clic en la infografía para ampliarla y utilizar Leer / Explicar.</figcaption></figure>
+    <div class="closing-conclusion"><strong>Conclusión final</strong><p>Un buen crédito no termina cuando se desembolsa. Empieza con una evaluación que distingue carácter, capacidad, capital, condiciones y colateral; continúa con políticas y seguimiento que detectan señales a tiempo; y se completa cuando el valor retorna sin convertir la cobranza en una reacción tardía. Para administrar cartera con criterio, no basta saber quién está atrasado: hay que entender por qué, cuánto riesgo representa, qué impacto puede generar y qué acción proporcional protege mejor a la institución y al cliente.</p></div>
+    <div class="actions"><button class="btn secondary" data-open-resource="infographic">Ver síntesis visual ampliada</button><button class="btn secondary" data-go="recursos">Abrir recursos</button></div>
+  </div>
+</section>
+</main>
+<footer class="program-footer"><img src="assets/logo_ipn.png" alt="Instituto Peruano de Negocios"><div><strong>Administración Bancaria · Sesión 2</strong><span>Créditos, evaluación, cobranza y recuperación</span><span>Elaborado por: Mg. Ricardo Puccio Alvarado · ripua@gmail.com</span></div></footer>
+</div>
+
+<dialog class="modal" id="conceptModal">
+  <div class="modal-shell concept-shell">
+    <header class="modal-header"><div><span class="modal-kicker" id="conceptKicker"></span><h2 id="conceptTitle"></h2></div><button class="modal-close" data-close="conceptModal" aria-label="Cerrar">×</button></header>
+    <div class="modal-scroll" id="conceptBody"></div>
+    <footer class="modal-footer"><div class="modal-nav"><button id="prevConcept">← Anterior</button><span id="conceptCounter"></span><button id="nextConcept">Siguiente →</button></div></footer>
+  </div>
+</dialog>
+
+<dialog class="modal" id="resourceModal">
+  <div class="modal-shell resource-shell" id="resourceShell">
+    <header class="modal-header"><div><span class="modal-kicker" id="resourceType"></span><h2 id="resourceTitle"></h2></div><div class="header-actions"><button id="resourceFull" title="Pantalla completa">⛶</button><button class="modal-close" data-close="resourceModal">×</button></div></header>
+    <div class="resource-body" id="resourceBody"></div>
+    <footer class="modal-footer resource-footer" id="resourceFooter"></footer>
+  </div>
+</dialog>
+
+<dialog class="modal video-modal" id="videoModal">
+  <div class="video-float-shell" id="videoFloatShell">
+    <button class="video-float-close" type="button" data-close="videoModal" aria-label="Cerrar video">×</button>
+    <video id="floatingVideo" controls preload="metadata"></video>
+  </div>
+</dialog>
+
+<dialog class="modal image-modal" id="imageModal"><div class="image-shell"><button class="modal-close image-close" data-close="imageModal">×</button><img id="imageModalImg" alt="Vista ampliada"></div></dialog>
+<div class="toast" id="toast" aria-live="polite"></div>
+<script src="data.js"></script>
+<script src="resource_texts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

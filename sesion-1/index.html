@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Administración Bancaria · Sesión 1 · Instituto Peruano de Negocios</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+  <div class="brand"><img src="assets/logo_ipn.png" alt="Instituto Peruano de Negocios"><div><strong>Administración Bancaria</strong><span>Sesión 1 · Introducción al Sistema Financiero Peruano</span></div></div>
+  <div class="utility">
+    <button id="fontMinus" title="Reducir texto">A−</button><button id="fontPlus" title="Aumentar texto">A+</button>
+    <button id="soundBtn" title="Sonidos de confirmación">🔊</button><button id="themeBtn" title="Cambiar modo claro / oscuro" aria-pressed="false">◐</button>
+    <select id="layoutSelect" title="Modo aula"><option value="auto">Auto</option><option value="16x9">16:9</option><option value="4x3">4:3</option><option value="normal">Normal</option></select>
+    <button id="fullBtn" title="Pantalla completa">⛶</button>
+  </div>
+</header>
+<nav class="main-nav" aria-label="Ruta de aprendizaje">
+  <button class="nav-item active" data-go="inicio">01 Inicio</button>
+  <button class="nav-item" data-go="conceptos">02 Conceptos</button>
+  <button class="nav-item" data-go="simulador">03 Simulador</button>
+  <button class="nav-item" data-go="comprobacion">04 Comprobación</button>
+  <button class="nav-item" data-go="recursos">05 Recursos</button>
+  <button class="nav-item" data-go="cierre">06 Cierre</button>
+</nav>
+<main>
+<section class="section active" id="inicio">
+  <div class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">INSTITUTO PERUANO DE NEGOCIOS · SESIÓN 1</span>
+      <h1>Introducción al Sistema Financiero Peruano</h1>
+      <h2>Cómo circula el dinero, quiénes participan y por qué la intermediación es clave</h2>
+      <p>Recorre el sistema siguiendo el viaje del dinero: identifica quién dispone de recursos, quién los necesita, qué ruta los conecta y cómo funciona el motor bancario.</p>
+      <div class="actions"><button class="btn primary" data-open-resource="video-main">▶ Ver video de apertura</button><button class="btn secondary" data-go="conceptos">Iniciar recorrido →</button></div>
+    </div>
+    <div class="hero-logo"><img src="assets/logo_ipn.png" alt="Instituto Peruano de Negocios"></div>
+  </div>
+  <div class="opening-grid">
+    <div class="opening-card"><span>1</span><strong>AGENTES</strong><p>Quién ahorra y quién necesita recursos.</p></div>
+    <div class="opening-card"><span>2</span><strong>RUTAS</strong><p>Intermediación directa e indirecta.</p></div>
+    <div class="opening-card"><span>3</span><strong>CONTROL</strong><p>MEF, BCRP, SBS y SMV.</p></div>
+    <div class="opening-card"><span>4</span><strong>BANCO</strong><p>Captación, encaje y colocación.</p></div>
+  </div>
+  <div class="callout"><strong>Pregunta de apertura</strong><p>Si depositas S/ 1,000 en una cuenta, ¿el banco simplemente guarda esos mismos billetes hasta que regreses por ellos, o esos recursos pasan a formar parte de un mecanismo más amplio de intermediación?</p></div>
+</section>
+
+<section class="section" id="conceptos">
+  <div class="section-head"><div><span class="eyebrow dark">CONCEPTOS ESENCIALES</span><h2>Cuatro tarjetas para construir el mapa</h2><p>Pasa el mouse sobre una tarjeta para verla girar. Haz clic o tócala para abrir el contenido ampliado.</p></div><span class="badge" id="conceptProgress">0 / 4 revisadas</span></div>
+  <div class="concept-grid" id="conceptGrid"></div>
+</section>
+
+<section class="section" id="simulador">
+  <div class="section-head"><div><span class="eyebrow dark">SIMULADOR · SIGUE EL DINERO</span><h2>De los S/ 1,000 de Ana a una decisión de financiamiento</h2><p>Cada paso incluye apoyo visual y, cuando aporta valor, un extracto de audio antes de la pregunta.</p></div><span class="badge" id="simProgress">0 / 5 decisiones</span></div>
+  <div class="route-map" id="routeMap">
+    <div class="route-node" id="node-ana">Ana<br><small>S/ 1,000</small></div><span>→</span>
+    <div class="route-node" id="node-banco">Banco<br><small>captación / reserva</small></div><span>→</span>
+    <div class="route-node" id="node-empresa">Talleres Horizonte<br><small>crédito</small></div><span>⇄</span>
+    <div class="route-node" id="node-mercado">Mercado de valores<br><small>ruta alternativa</small></div>
+  </div>
+  <div id="simHost"></div>
+  <div class="what-wrap hidden" id="whatWrap">
+    <div class="section-subhead"><div><span class="eyebrow dark">EXPLORADOR DE ESCENARIOS</span><h3>¿Qué pasaría si...?</h3><p>Activa una o varias condiciones. No hay una sola combinación correcta: el objetivo es interpretar qué cambia y qué no.</p></div></div>
+    <div class="what-options">
+      <label><input type="checkbox" value="A"> <strong>A</strong><span>Aumentan los depósitos de los ahorristas.</span></label>
+      <label><input type="checkbox" value="B"> <strong>B</strong><span>El banco mantiene una reserva de liquidez mayor.</span></label>
+      <label><input type="checkbox" value="C"> <strong>C</strong><span>Talleres Horizonte busca financiamiento mediante valores.</span></label>
+    </div>
+    <div class="actions"><button class="btn primary" id="analyzeScenario" disabled>Analizar combinación</button><button class="btn ghost" id="clearScenario" disabled>Limpiar</button></div>
+    <div id="scenarioResult"></div>
+    <div class="detect-card"><div><span class="eyebrow dark">DETECTA EL ERROR</span><h3>Una afirmación parece sencilla, pero es incompleta</h3></div><div id="detectHost"></div></div>
+  </div>
+</section>
+
+<section class="section" id="comprobacion">
+  <div class="section-head"><div><span class="eyebrow dark">COMPROBACIÓN INDIVIDUAL</span><h2>Seis preguntas para verificar comprensión</h2><p>Las preguntas y alternativas se presentan en orden aleatorio. Si fallas el primer intento, tendrás un segundo. Tras un segundo error se activa la Ruta correcta.</p></div><span class="badge" id="quizBadge">Pregunta 1 / 6</span></div>
+  <div class="quiz-progress"><span id="quizBar"></span></div>
+  <div id="quizHost"></div>
+  <div class="score-card hidden" id="scoreCard"><span class="eyebrow dark">RESULTADO</span><h2 id="scoreTitle"></h2><p id="scoreText"></p><button class="btn secondary" id="restartQuiz">Volver a comprobar</button></div>
+</section>
+
+<section class="section" id="recursos">
+  <div class="section-head"><div><span class="eyebrow dark">RECURSOS DE LA SESIÓN</span><h2>Abre cada material sin salir del programa</h2><p>Todos los recursos se visualizan en una ventana interna y pueden ampliarse. Los materiales visuales incorporan Leer, Explicar, Pausar, Continuar y Detener.</p></div></div>
+  <div class="resource-grid" id="resourceGrid"></div>
+</section>
+
+<section class="section" id="cierre">
+  <div class="closing-card closing-report">
+    <span class="eyebrow">CIERRE · INFORME DE SÍNTESIS</span>
+    <h2>Comprender el sistema antes de memorizarlo</h2>
+    <p class="closing-lead">La sesión deja una idea central: el sistema financiero no es una lista de bancos, siglas o productos. Es un circuito que conecta excedentes con necesidades de financiamiento, mediante rutas distintas y bajo funciones de regulación, supervisión y estabilidad.</p>
+    <div class="closing-report-grid">
+      <div><strong>1. Actores</strong><p>Primero identifica quién dispone de recursos y quién los necesita. Esa relación explica la lógica del mercado financiero.</p></div>
+      <div><strong>2. Rutas</strong><p>Si una entidad financiera capta y coloca recursos, hablamos de intermediación indirecta. Si inversionistas adquieren valores del emisor, la ruta es directa.</p></div>
+      <div><strong>3. Motor bancario</strong><p>Captación, encaje o reserva y colocación forman una secuencia. El depósito representa una obligación para el banco; el préstamo, un derecho de cobro.</p></div>
+      <div><strong>4. Control</strong><p>MEF, BCRP, SBS y SMV cumplen funciones distintas. Comprender el ámbito de cada uno evita memorizar siglas sin criterio.</p></div>
+    </div>
+    <div class="closing-flow"><span>¿Quién tiene recursos?</span><b>→</b><span>¿Quién los necesita?</span><b>→</b><span>¿Qué ruta los conecta?</span><b>→</b><span>¿Qué institución u organismo interviene?</span></div>
+    <figure class="closing-infographic" data-open-resource="infographic"><img src="assets/infografia_sistema_financiero_limpia.png" alt="Síntesis visual del Sistema Financiero Peruano"><figcaption>Haz clic en la infografía para ampliarla y utilizar Leer / Explicar.</figcaption></figure>
+    <div class="closing-conclusion"><strong>Conclusión final</strong><p>Una decisión financiera se interpreta mejor cuando se sigue el recorrido del dinero. Antes de concluir, conviene separar actor, ruta, instrumento y función institucional. Esa lectura permite distinguir captación de colocación, operación pasiva de activa e intermediación indirecta de directa, y convierte conceptos aislados en un mapa coherente del Sistema Financiero Peruano.</p></div>
+    <div class="actions"><button class="btn secondary" data-open-resource="infographic">Ver síntesis visual ampliada</button><button class="btn secondary" data-go="recursos">Abrir recursos</button></div>
+  </div>
+</section>
+</main>
+<footer class="program-footer"><img src="assets/logo_ipn.png" alt="Instituto Peruano de Negocios"><div><strong>Administración Bancaria · Sesión 1</strong><span>Introducción al Sistema Financiero Peruano</span><span>Elaborado por: Mg. Ricardo Puccio Alvarado · ripua@gmail.com</span></div></footer>
+</div>
+
+<dialog class="modal" id="conceptModal">
+  <div class="modal-shell concept-shell">
+    <header class="modal-header"><div><span class="modal-kicker" id="conceptKicker"></span><h2 id="conceptTitle"></h2></div><button class="modal-close" data-close="conceptModal" aria-label="Cerrar">×</button></header>
+    <div class="modal-scroll" id="conceptBody"></div>
+    <footer class="modal-footer"><div class="modal-nav"><button id="prevConcept">← Anterior</button><span id="conceptCounter"></span><button id="nextConcept">Siguiente →</button></div></footer>
+  </div>
+</dialog>
+
+<dialog class="modal" id="resourceModal">
+  <div class="modal-shell resource-shell" id="resourceShell">
+    <header class="modal-header"><div><span class="modal-kicker" id="resourceType"></span><h2 id="resourceTitle"></h2></div><div class="header-actions"><button id="resourceFull" title="Pantalla completa">⛶</button><button class="modal-close" data-close="resourceModal">×</button></div></header>
+    <div class="resource-body" id="resourceBody"></div>
+    <footer class="modal-footer resource-footer" id="resourceFooter"></footer>
+  </div>
+</dialog>
+
+
+<dialog class="modal video-modal" id="videoModal">
+  <div class="video-float-shell" id="videoFloatShell">
+    <button class="video-float-close" type="button" data-close="videoModal" aria-label="Cerrar video">×</button>
+    <video id="floatingVideo" controls preload="metadata"></video>
+  </div>
+</dialog>
+
+<dialog class="modal image-modal" id="imageModal"><div class="image-shell"><button class="modal-close image-close" data-close="imageModal">×</button><img id="imageModalImg" alt="Vista ampliada"></div></dialog>
+<div class="toast" id="toast" aria-live="polite"></div>
+<script src="data.js"></script>
+<script src="resource_texts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

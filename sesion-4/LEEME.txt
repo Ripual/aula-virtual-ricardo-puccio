@@ -1,0 +1,34 @@
+PROGRAMA INTERACTIVO · ADMINISTRACIÓN BANCARIA · SESIÓN 4
+Instituto Peruano de Negocios
+
+Tema: Análisis de Estados Financieros y Gestión Integral de Riesgos
+Elaborado por: Mg. Ricardo Puccio Alvarado
+Correo: ripua@gmail.com
+
+USO
+1. Descomprima el ZIP completo.
+2. Abra program/index.html con Chrome, Edge o Firefox.
+3. Mantenga la carpeta assets junto al archivo index.html.
+
+ESTRUCTURA DIDÁCTICA
+- Inicio con video de apertura.
+- 4 tarjetas Flip: concepto primero → Ver pregunta → 2 intentos → Ruta correcta.
+- Laboratorio central de 4 misiones:
+  1) Radiografía financiera tipo Excel.
+  2) Cálculo e interpretación contextual de ratios.
+  3) ¿Qué pasaría si...? Un escenario analizado basta para completar la misión.
+  4) Probabilidad, impacto, controles y riesgo residual.
+- Informe ejecutivo desbloqueado al completar las cuatro misiones.
+- Comprobación individual de 5 preguntas.
+- Recursos internos: PPT, artículo, Excel real, videos, audio y síntesis visual.
+
+ESCENARIOS DEL LABORATORIO
+- Ventas -20 %.
+- Inventarios +30 %.
+- Gastos financieros +50 %.
+Los escenarios son supuestos académicos para observar sensibilidad; no constituyen políticas reales ni umbrales universales.
+
+REGLA CENTRAL
+Un ratio es una señal, no una sentencia. La lectura debe considerar composición, sector, periodo, calidad de la información y relación con otros indicadores.
+
+AJUSTES: evidencia simulada por dato, vista compacta/desagregada, expansión de siglas ROA/ROE/BAII, validación cualitativa de decisión e infografía integradora en Recursos y Cierre.

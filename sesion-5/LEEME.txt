@@ -1,0 +1,24 @@
+PROGRAMA INTERACTIVO · ADMINISTRACIÓN BANCARIA · SESIÓN 5
+Instituto Peruano de Negocios
+
+Tema: Gestión y Administración de Agencias · Auditoría Bancaria
+Elaborado por: Mg. Ricardo Puccio Alvarado
+Correo: ripual@gmail.com
+
+USO
+1. Abra index.html con un navegador moderno (Chrome, Edge, Firefox o Safari).
+2. Mantenga toda la carpeta "program" unida; no mueva los archivos de assets.
+3. El programa funciona localmente. Los recursos audiovisuales pueden tardar algunos segundos en cargar por su tamaño.
+4. Use el botón ↺ de la parte superior para reiniciar completamente la ejecución.
+
+RUTA
+Inicio → Conceptos → Laboratorio → Comprobación → Recursos → Cierre.
+
+LABORATORIO
+"Agencia Horizonte bajo control" incluye cuatro misiones:
+1) Operación y evidencia.
+2) Trabajo de auditoría.
+3) ¿Qué cambia si...? (un escenario analizado basta para completar la misión).
+4) Prevención LA/FT.
+
+Los casos son didácticos. No representan políticas internas, umbrales, criterios de reporte ni procedimientos operativos reales de una entidad financiera.

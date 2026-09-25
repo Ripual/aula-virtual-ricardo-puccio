@@ -1,16 +1,24 @@
-ACTUALIZACIÓN AULA VIRTUAL v1.2
+ACTUALIZACIÓN AULA VIRTUAL v1.3 — SESIÓN 5 PROGRAMADA
 
-CORRECCIÓN INCLUIDA
-- En celular, el botón “🏠 Aula” queda siempre visible en la esquina inferior izquierda.
-- En laptop/escritorio se conserva el botón flotante “🏠 Aula Virtual” a la derecha.
-- El botón fue movido fuera del contenedor principal para evitar recortes por overflow/viewport móvil.
-- Se mantienen las mejoras de scroll táctil de la v1.1.
+Objetivo
+- Añadir la Sesión 5 completa al curso Administración Bancaria.
+- Mantenerla bloqueada hasta el 25/09/2026 a las 7:00 p. m. hora de Perú (UTC-5).
+- A las 7:00 p. m. la portada cambia automáticamente de 4 a 5 sesiones disponibles y habilita el enlace.
+- Si alguien intenta entrar directamente antes de la hora, verá una pantalla de espera con contador.
+- La hora se valida primero contra una función de Vercel (/api/session-5-status), no solo contra el reloj del dispositivo.
+- Sesión 5 incluye el botón móvil/desktop “Aula Virtual” y la mejora de scroll táctil.
 
-CÓMO ACTUALIZAR
+CÓMO INSTALAR
 1. Descomprime este ZIP.
-2. Copia las carpetas sesion-1, sesion-2, sesion-3 y sesion-4.
-3. Pégalas en la raíz de tu repositorio local aula-virtual-ricardo-puccio.
-4. Acepta reemplazar los archivos.
-5. En GitHub Desktop: Summary “v1.2 - Botón Aula visible en móvil”.
-6. Commit to main → Push origin.
-7. Espera el despliegue automático de Vercel y prueba el mismo enlace.
+2. Dentro encontrarás: index.html, api/, thumbnails/ y sesion-5/.
+3. Copia ESOS CUATRO elementos a la raíz de tu repositorio local aula-virtual-ricardo-puccio.
+4. Acepta reemplazar index.html y combinar las carpetas.
+5. En GitHub Desktop revisa los cambios.
+6. Summary sugerido: “v1.3 - Sesión 5 programada 19:00 Perú”.
+7. Commit to main.
+8. Push origin.
+9. Vercel desplegará automáticamente el mismo enlace.
+
+IMPORTANTE
+- La programación está fijada para HOY, 25/09/2026, 19:00 hora de Perú.
+- El repositorio GitHub actual es público; el bloqueo sirve para la navegación normal de alumnos, pero un usuario técnico podría consultar archivos directamente en GitHub. Para una protección estricta futura conviene pasar el repositorio a privado y añadir autenticación del lado del servidor.

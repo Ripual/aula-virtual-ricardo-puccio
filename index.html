@@ -62,6 +62,11 @@
     .locked .thumb{display:grid;place-items:center;background:linear-gradient(145deg,#e8edf5,#f6f8fb)}
     .lock-icon{width:70px;height:70px;border-radius:22px;background:white;border:1px solid var(--line);display:grid;place-items:center;font-size:29px;box-shadow:0 10px 28px rgba(37,50,78,.08)}
     .soon{margin-top:auto;padding-top:18px;color:#7a8497;font-size:13px;font-weight:800}
+    .schedule-lock{position:absolute;left:14px;top:14px;width:46px;height:46px;border-radius:15px;background:rgba(255,255,255,.94);border:1px solid var(--line);display:grid;place-items:center;font-size:21px;box-shadow:0 10px 24px rgba(37,50,78,.14);z-index:2}
+    .card.scheduled .thumb img{filter:saturate(.55) brightness(.92)}
+    .card.released{opacity:1;box-shadow:0 12px 34px rgba(37,50,78,.08)}
+    .card.released:hover{transform:translateY(-4px);box-shadow:0 22px 46px rgba(37,50,78,.13);border-color:#cad4e5}
+    .card.released .thumb img{filter:none}
     footer{border-top:1px solid var(--line);padding:24px 0 34px;color:var(--muted);font-size:12px}
     footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     @media(max-width:900px){.hero{grid-template-columns:1fr}.hero-side{min-height:0}.grid{grid-template-columns:1fr}.card{grid-template-columns:190px 1fr}}
@@ -83,7 +88,7 @@
     </section>
     <aside class="hero-side">
       <div><div class="label">Curso activo</div><h2>Administración Bancaria</h2><p>Instituto Peruano de Negocios · recorrido organizado en cinco sesiones.</p></div>
-      <div class="stats"><div class="stat"><b>4</b><span>sesiones disponibles</span></div><div class="stat"><b>5</b><span>sesiones del curso</span></div></div>
+      <div class="stats"><div class="stat"><b id="availableCount">4</b><span>sesiones disponibles</span></div><div class="stat"><b>5</b><span>sesiones del curso</span></div></div>
     </aside>
   </div>
 </header>
@@ -110,13 +115,69 @@
         <div class="thumb"><img src="thumbnails/sesion-4.webp" alt="Miniatura de la Sesión 4" loading="lazy"></div>
         <div class="body"><div class="kicker">Sesión 4</div><h3>Análisis de Estados Financieros y Gestión Integral de Riesgos</h3><p>Lectura financiera, ratios, rentabilidad, eficiencia y riesgo residual para decidir.</p><a class="open" href="sesion-4/">Ingresar a la sesión <span class="arrow">→</span></a></div>
       </article>
-      <article class="card locked" aria-disabled="true">
-        <div class="thumb"><div class="lock-icon" aria-hidden="true">🔒</div></div>
-        <div class="body"><div class="kicker">Sesión 5</div><h3>Próximamente</h3><p>La quinta sesión se incorporará aquí sin cambiar el enlace principal del Aula Virtual.</p><div class="soon">Disponible próximamente</div></div>
+      <article class="card locked scheduled" id="session5Card" aria-disabled="true">
+        <div class="thumb"><img src="thumbnails/sesion-5.webp" alt="Miniatura de la Sesión 5" loading="lazy"><div class="schedule-lock" id="session5Lock" aria-hidden="true">🔒</div></div>
+        <div class="body"><div class="kicker">Sesión 5</div><h3>Gestión y Administración de Agencias · Auditoría Bancaria</h3><p>Control interno, auditoría bancaria, operación de agencias y prevención LA/FT.</p><div class="soon" id="session5Soon">Se habilita hoy a las 7:00 p. m. (Perú)</div><a class="open" id="session5Link" href="sesion-5/" hidden>Ingresar a la sesión <span class="arrow">→</span></a></div>
       </article>
     </section>
   </div>
 </main>
 <footer><div class="wrap"><span>© 2026 · Mg. Ricardo Puccio Alvarado</span><span>Aula Virtual · Programas interactivos</span></div></footer>
+<script>
+(() => {
+  const RELEASE_AT = '2026-09-25T19:00:00-05:00';
+  const target = Date.parse(RELEASE_AT);
+  const card = document.getElementById('session5Card');
+  const soon = document.getElementById('session5Soon');
+  const link = document.getElementById('session5Link');
+  const lock = document.getElementById('session5Lock');
+  const available = document.getElementById('availableCount');
+  let serverOffset = 0;
+  let released = false;
+
+  function fmt(ms){
+    const total = Math.max(0, Math.floor(ms / 1000));
+    const h = Math.floor(total / 3600);
+    const m = Math.floor((total % 3600) / 60);
+    const sec = total % 60;
+    if (h > 0) return `${h} h ${String(m).padStart(2,'0')} min`;
+    if (m > 0) return `${m} min ${String(sec).padStart(2,'0')} s`;
+    return `${sec} s`;
+  }
+  function openCard(){
+    if (released) return;
+    released = true;
+    card.classList.remove('locked','scheduled');
+    card.classList.add('released');
+    card.removeAttribute('aria-disabled');
+    if (lock) lock.remove();
+    soon.hidden = true;
+    link.hidden = false;
+    available.textContent = '5';
+  }
+  function tick(){
+    if (released) return;
+    const now = Date.now() + serverOffset;
+    const remain = target - now;
+    if (remain <= 0) { openCard(); return; }
+    soon.textContent = `Se habilita hoy a las 7:00 p. m. (Perú) · faltan ${fmt(remain)}`;
+  }
+  async function sync(){
+    try{
+      const res = await fetch('/api/session-5-status', {cache:'no-store'});
+      if (!res.ok) throw new Error('status');
+      const data = await res.json();
+      if (data.serverNow) serverOffset = Date.parse(data.serverNow) - Date.now();
+      if (data.released) openCard(); else tick();
+    }catch(_e){
+      // Respaldo: si el endpoint no responde, el contador usa la hora del dispositivo.
+      tick();
+    }
+  }
+  sync();
+  setInterval(tick, 1000);
+  setInterval(sync, 30000);
+})();
+</script>
 </body>
 </html>

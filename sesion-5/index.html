@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Administración Bancaria · Sesión 5 · Instituto Peruano de Negocios</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="release-locked">
+<div id="releaseGate" class="release-gate" role="dialog" aria-modal="true" aria-labelledby="releaseGateTitle">
+  <div class="release-gate-card">
+    <img src="assets/logo_ipn.png" alt="Instituto Peruano de Negocios" class="release-gate-logo">
+    <span class="release-gate-kicker">ADMINISTRACIÓN BANCARIA · SESIÓN 5</span>
+    <h1 id="releaseGateTitle">Sesión programada</h1>
+    <p>Gestión y Administración de Agencias · Auditoría Bancaria estará disponible hoy a las <strong>7:00 p. m. (hora de Perú)</strong>.</p>
+    <div class="release-countdown" id="releaseCountdown">Comprobando horario…</div>
+    <div class="release-gate-actions"><button type="button" id="releaseRetry">Comprobar ahora</button><a href="../">🏠 Volver al Aula Virtual</a></div>
+    <small>La apertura se valida con la hora del servidor para evitar diferencias en el reloj del dispositivo.</small>
+  </div>
+</div>
+<div class="app-shell" id="sessionApp" inert aria-hidden="true">
+<header class="topbar">
+  <div class="brand"><img src="assets/logo_ipn.png" alt="Instituto Peruano de Negocios"><div><strong>Administración Bancaria</strong><span>Sesión 5 · Gestión y Administración de Agencias · Auditoría Bancaria</span></div></div>
+  <div class="utility">
+    <button id="fontMinus" title="Reducir texto">A−</button><button id="fontPlus" title="Aumentar texto">A+</button>
+    <button id="soundBtn" title="Sonidos de confirmación">🔊</button><button id="themeBtn" title="Cambiar modo claro / oscuro" aria-pressed="false">◐</button>
+    <select id="layoutSelect" title="Modo aula"><option value="auto">Auto</option><option value="16x9">16:9</option><option value="4x3">4:3</option><option value="normal">Normal</option></select>
+    <button id="fullBtn" title="Pantalla completa">⛶</button><button id="resetAll" title="Reiniciar programa">↺</button>
+  </div>
+</header>
+<nav class="main-nav" aria-label="Ruta de aprendizaje">
+  <button class="nav-item active" data-go="inicio">01 Inicio</button>
+  <button class="nav-item" data-go="conceptos">02 Conceptos</button>
+  <button class="nav-item" data-go="simulador">03 Laboratorio</button>
+  <button class="nav-item" data-go="comprobacion">04 Comprobación</button>
+  <button class="nav-item" data-go="recursos">05 Recursos</button>
+  <button class="nav-item" data-go="cierre">06 Cierre</button>
+</nav>
+<main>
+<section class="section active" id="inicio">
+  <div class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">INSTITUTO PERUANO DE NEGOCIOS · SESIÓN 5</span>
+      <h1>Gestión y Administración de Agencias · Auditoría Bancaria</h1>
+      <h2>Operar, controlar, verificar y prevenir</h2>
+      <p>Recorre una agencia ficticia y comprueba cómo control interno, auditoría y prevención LA/FT protegen una operación desde que nace hasta su validación final.</p>
+      <div class="actions"><button class="btn primary" data-open-resource="video-main">▶ Ver video de apertura</button><button class="btn secondary" data-go="conceptos">Iniciar recorrido →</button></div>
+      <div class="author-credit"><strong>Elaborado por: Mg. Ricardo Puccio Alvarado</strong><span>ripual@gmail.com</span></div>
+    </div>
+    <div class="hero-logo"><img src="assets/logo_ipn.png" alt="Instituto Peruano de Negocios"></div>
+  </div>
+  <div class="opening-grid">
+    <div class="opening-card"><span>1</span><strong>CONTROL</strong><p>Autorizar, segregar y dejar evidencia.</p></div>
+    <div class="opening-card"><span>2</span><strong>AUDITORÍA</strong><p>Verificar con técnica y criterio profesional.</p></div>
+    <div class="opening-card"><span>3</span><strong>AGENCIA</strong><p>Caja, bancos, inversiones y procesos.</p></div>
+    <div class="opening-card"><span>4</span><strong>PREVENCIÓN</strong><p>Conocer, monitorear, detectar y escalar.</p></div>
+  </div>
+  <div class="callout"><strong>Pregunta de apertura · registra tu respuesta</strong><p>Si una operación aparece correctamente registrada en el sistema, ¿eso demuestra por sí solo que fue autorizada, que los controles funcionaron y que no existe una señal de riesgo?</p><div id="openingQuestion"></div><small>Tu respuesta inicial se guardará sin calificar. Volveremos a ella en el cierre.</small></div>
+</section>
+
+<section class="section" id="conceptos">
+  <div class="section-head"><div><span class="eyebrow dark">CONCEPTOS ESENCIALES</span><h2>Cuatro tarjetas antes del laboratorio</h2><p>Concepto primero → apoyo visual / audio → Ver pregunta. Las alternativas cambian de posición en cada nueva ejecución.</p></div><span class="badge" id="conceptProgress">0 / 4 revisadas</span></div>
+  <div class="concept-grid" id="conceptGrid"></div>
+</section>
+
+<section class="section" id="simulador">
+  <div class="section-head"><div><span class="eyebrow dark">LABORATORIO INTEGRADO</span><h2>Agencia Horizonte bajo control</h2><p>El corazón de la sesión: una operación pasa por autorización, auditoría, prueba de controles y prevención LA/FT. No necesitas completar escenarios opcionales para avanzar.</p></div><span class="badge" id="labBadge">0 / 4 misiones</span></div>
+  <div class="lab-disclaimer"><strong>Regla central:</strong> un registro correcto no prueba por sí solo que el proceso estuvo bien controlado. La decisión se sostiene con evidencia, segregación, ejecución del control, contexto y revisión especializada cuando corresponde.</div>
+  <div id="labHost"></div>
+</section>
+
+<section class="section" id="comprobacion">
+  <div class="section-head"><div><span class="eyebrow dark">COMPROBACIÓN INDIVIDUAL</span><h2>Cinco preguntas para integrar control, auditoría y prevención</h2><p>Primer intento; si falla, segundo intento; si vuelve a fallar, Ruta correcta. Las alternativas se barajan en cada ejecución.</p></div><span class="badge" id="quizBadge">Pregunta 1 / 5</span></div>
+  <div class="quiz-progress"><span id="quizBar"></span></div>
+  <div id="quizHost"></div>
+  <div class="score-card hidden" id="scoreCard"><span class="eyebrow dark">RESULTADO</span><h2 id="scoreTitle"></h2><p id="scoreText"></p><button class="btn secondary" id="restartQuiz">Volver a comprobar</button></div>
+</section>
+
+<section class="section" id="recursos">
+  <div class="section-head"><div><span class="eyebrow dark">RECURSOS DE LA SESIÓN</span><h2>Todo el material dentro del programa</h2><p>PPT, artículo, video principal, los dos videos cortos, infografía y audio completo. Los dos videos cortos se utilizan además en momentos distintos del recorrido.</p></div></div>
+  <div class="resource-grid" id="resourceGrid"></div>
+</section>
+
+<section class="section" id="cierre">
+  <div class="closing-card closing-report">
+    <span class="eyebrow">CIERRE · INTEGRIDAD BANCARIA</span>
+    <h2>Controlar, verificar y prevenir forman una sola cadena</h2>
+    <p class="closing-lead">Una operación segura no depende de una sola barrera. El control interno previene y ordena; la auditoría comprueba si realmente funcionó; y la prevención LA/FT analiza perfiles, transacciones y alertas para escalar cuando corresponde.</p>
+    <div class="closing-report-grid">
+      <div><strong>1. Control interno</strong><p>Autoriza, separa funciones, protege activos y deja trazabilidad.</p></div>
+      <div><strong>2. Auditoría</strong><p>Obtiene evidencia, prueba cifras y reglas, y comunica hallazgos.</p></div>
+      <div><strong>3. Prevención LA/FT</strong><p>Conoce al cliente, monitorea operaciones y detecta desviaciones del perfil.</p></div>
+      <div><strong>4. Decisión</strong><p>Una alerta no equivale automáticamente a culpabilidad: exige análisis, documentación y el proceso institucional correspondiente.</p></div>
+    </div>
+    <div id="closingOpeningReview" class="closing-review"></div>
+    <figure class="closing-infographic" data-open-resource="infographic"><img src="assets/infografia_sesion5.png" alt="Guía de Integridad Bancaria: Control, Auditoría y Prevención"><figcaption>Haz clic para ampliar la infografía integradora de la Sesión 5.</figcaption></figure>
+    <div class="closing-conclusion"><strong>Conclusión final</strong><p>La integridad bancaria no se logra acumulando controles, sino logrando que cada control tenga propósito, responsable, evidencia y revisión. Una agencia sólida es aquella donde operación, control, auditoría y prevención trabajan de forma coherente.</p></div>
+    <div class="actions"><button class="btn secondary" data-open-resource="infographic">Ver infografía ampliada</button><button class="btn secondary" data-go="recursos">Abrir recursos</button></div>
+  </div>
+</section>
+</main>
+<footer class="program-footer"><img src="assets/logo_ipn.png" alt="Instituto Peruano de Negocios"><div><strong>Administración Bancaria · Sesión 5</strong><span>Gestión y Administración de Agencias · Auditoría Bancaria</span><span>Elaborado por: Mg. Ricardo Puccio Alvarado · ripual@gmail.com</span></div></footer>
+</div>
+<button id="aulaHomeBtn" class="aula-home-btn" type="button" title="Volver al Aula Virtual" aria-label="Volver al Aula Virtual">🏠 <span>Aula Virtual</span></button>
+
+<dialog class="modal" id="conceptModal">
+  <div class="modal-shell concept-shell">
+    <header class="modal-header"><div><span class="modal-kicker" id="conceptKicker"></span><h2 id="conceptTitle"></h2></div><button class="modal-close" data-close="conceptModal" aria-label="Cerrar">×</button></header>
+    <div class="modal-scroll" id="conceptBody"></div>
+    <footer class="modal-footer"><div class="modal-nav"><button id="prevConcept">← Anterior</button><span id="conceptCounter"></span><button id="nextConcept">Siguiente →</button></div></footer>
+  </div>
+</dialog>
+<dialog class="modal" id="resourceModal">
+  <div class="modal-shell resource-shell" id="resourceShell">
+    <header class="modal-header"><div><span class="modal-kicker" id="resourceType"></span><h2 id="resourceTitle"></h2></div><div class="header-actions"><button id="resourceFull" title="Pantalla completa">⛶</button><button class="modal-close" data-close="resourceModal">×</button></div></header>
+    <div class="resource-body" id="resourceBody"></div>
+    <footer class="modal-footer resource-footer" id="resourceFooter"></footer>
+  </div>
+</dialog>
+<dialog class="modal video-modal" id="videoModal"><div class="video-float-shell"><button class="video-float-close" type="button" data-close="videoModal">×</button><video id="floatingVideo" controls preload="metadata"></video></div></dialog>
+<dialog class="modal image-modal" id="imageModal"><div class="image-shell"><button class="modal-close image-close" data-close="imageModal">×</button><img id="imageModalImg" alt="Vista ampliada"></div></dialog>
+<dialog class="modal" id="caseModal"><div class="modal-shell case-shell"><header class="modal-header"><div><span class="modal-kicker">CONTEXTO DEL CASO</span><h2>Agencia Horizonte · operación simulada</h2></div><button class="modal-close" data-close="caseModal">×</button></header><div class="modal-scroll" id="caseBody"></div></div></dialog>
+<div class="toast" id="toast"></div>
+<script>
+(() => {
+  const RELEASE_AT = '2026-09-25T19:00:00-05:00';
+  const target = Date.parse(RELEASE_AT);
+  const gate = document.getElementById('releaseGate');
+  const countdown = document.getElementById('releaseCountdown');
+  const retry = document.getElementById('releaseRetry');
+  const app = document.getElementById('sessionApp');
+  let serverOffset = 0;
+  let loading = false;
+  let opened = false;
+
+  function fmt(ms){
+    const total = Math.max(0, Math.floor(ms / 1000));
+    const h = Math.floor(total / 3600);
+    const m = Math.floor((total % 3600) / 60);
+    const s = total % 60;
+    if (h > 0) return `${h} h ${String(m).padStart(2,'0')} min ${String(s).padStart(2,'0')} s`;
+    if (m > 0) return `${m} min ${String(s).padStart(2,'0')} s`;
+    return `${s} s`;
+  }
+  function loadScript(src){
+    return new Promise((resolve,reject)=>{
+      const el=document.createElement('script'); el.src=src; el.onload=resolve; el.onerror=reject; document.body.appendChild(el);
+    });
+  }
+  async function openSession(){
+    if (opened || loading) return;
+    loading = true;
+    countdown.textContent = 'Abriendo la sesión…';
+    try{
+      await loadScript('resource_texts.js');
+      await loadScript('data.js');
+      await loadScript('app.js');
+      app.removeAttribute('inert');
+      app.setAttribute('aria-hidden','false');
+      document.body.classList.remove('release-locked');
+      gate.remove();
+      opened = true;
+    }catch(e){
+      loading = false;
+      countdown.textContent = 'No se pudo iniciar el programa. Recarga la página.';
+    }
+  }
+  function tick(){
+    if (opened || loading) return;
+    const now = Date.now() + serverOffset;
+    const remain = target - now;
+    if (remain <= 0) { check(true); return; }
+    countdown.textContent = `Disponible en ${fmt(remain)}`;
+  }
+  async function check(allowFallback=false){
+    if (opened || loading) return;
+    retry.disabled = true;
+    try{
+      const res = await fetch('/api/session-5-status', {cache:'no-store'});
+      if (!res.ok) throw new Error('status');
+      const data = await res.json();
+      if (data.serverNow) serverOffset = Date.parse(data.serverNow) - Date.now();
+      if (data.released) await openSession(); else tick();
+    }catch(_e){
+      const localReached = Date.now() >= target;
+      if (allowFallback && localReached) await openSession();
+      else countdown.textContent = localReached ? 'Comprobando apertura…' : `Disponible en ${fmt(target-Date.now())}`;
+    }finally{ retry.disabled = false; }
+  }
+  retry.addEventListener('click',()=>check(false));
+  check(false);
+  setInterval(tick,1000);
+  setInterval(()=>check(false),30000);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+ACTUALIZACIÓN AULA VIRTUAL v1.5 — CONTACTO POR CORREO
+
+1. Copia index.html dentro de la carpeta raíz aula-virtual-ricardo-puccio.
+2. Acepta reemplazar el index.html existente.
+3. Abre GitHub Desktop.
+4. Summary sugerido: v1.5 - Contacto Gmail y Outlook
+5. Commit to main.
+6. Push origin.
+7. Espera el despliegue automático de Vercel y recarga la página.
+
+CAMBIO:
+Al tocar ripual@gmail.com aparece una ventana con tres opciones:
+- Gmail Web (redacción directa con destinatario y asunto preparados)
+- Outlook Web (redacción directa con destinatario y asunto preparados)
+- Aplicación de correo del dispositivo (mailto, como respaldo)
+
+No se modifican las sesiones ni la programación de la Sesión 5.

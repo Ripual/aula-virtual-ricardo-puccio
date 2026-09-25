@@ -124,3 +124,41 @@ html[data-theme="dark"] .aula-home-btn{background:rgba(15,109,104,.97)}
   .aula-home-btn{right:10px;bottom:max(70px,calc(env(safe-area-inset-bottom) + 70px));min-height:42px;padding:.52rem .7rem;font-size:.84rem}
 }
 @media(max-width:420px){.aula-home-btn span{display:none}.aula-home-btn{width:44px;height:44px;justify-content:center;padding:0;font-size:1.05rem}}
+
+
+/* ===== Aula Virtual v1.2 · acceso móvil siempre visible =====
+   El botón se posiciona respecto del viewport (fuera de .app-shell) y,
+   en móviles, se ancla a la izquierda para evitar recortes por overflow
+   horizontal o por la barra del navegador. */
+.aula-home-btn{
+  position:fixed!important;
+  z-index:2147483000!important;
+  visibility:visible!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+  max-width:calc(100vw - 24px)!important;
+  transform:translateZ(0);
+  -webkit-transform:translateZ(0);
+}
+@media(max-width:700px){
+  .aula-home-btn{
+    left:max(12px,env(safe-area-inset-left))!important;
+    right:auto!important;
+    top:auto!important;
+    bottom:max(84px,calc(env(safe-area-inset-bottom) + 84px))!important;
+    min-width:92px!important;
+    width:auto!important;
+    height:46px!important;
+    min-height:46px!important;
+    padding:.48rem .72rem!important;
+    border-radius:999px!important;
+    font-size:.9rem!important;
+    gap:.35rem!important;
+    box-shadow:0 8px 26px rgba(0,0,0,.32)!important;
+  }
+  .aula-home-btn span{display:inline!important;font-size:0!important}
+  .aula-home-btn span::after{content:"Aula";font-size:.86rem!important;font-weight:900}
+}
+@media(max-width:700px) and (orientation:landscape){
+  .aula-home-btn{bottom:max(16px,calc(env(safe-area-inset-bottom) + 16px))!important}
+}

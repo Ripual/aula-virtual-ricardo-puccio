@@ -1,0 +1,20 @@
+ACTUALIZACION v1.4 - CORRECCION DE CORREO
+
+Correo correcto: ripual@gmail.com
+
+Cambios incluidos:
+1. Se corrigio ripua@gmail.com por ripual@gmail.com en las sesiones donde aparecia.
+2. Se corrigieron tambien los PDF de las sesiones 2, 3 y 4.
+3. Se corrigieron textos internos usados por lectura/explicacion y reportes donde correspondia.
+4. En la portada principal, debajo de "Mg. Ricardo Puccio Alvarado", se agrego ripual@gmail.com como enlace de contacto (mailto:).
+5. No se modificaron contenidos, preguntas, simuladores, videos ni la programacion de apertura de la Sesion 5.
+
+COMO INSTALAR
+- Descomprime este ZIP.
+- Copia TODO su contenido dentro de la carpeta local aula-virtual-ricardo-puccio.
+- Acepta combinar carpetas y reemplazar archivos.
+- Abre GitHub Desktop.
+- Summary sugerido: v1.4 - Correccion de correo y contacto
+- Commit to main.
+- Push origin.
+- Vercel actualizara el mismo enlace automaticamente.
